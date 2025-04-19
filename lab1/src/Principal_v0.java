@@ -2,7 +2,7 @@ package lab1.src;
 /**
  * Lab0: Leitura de Base de Dados N�o-Distribuida
  * 
- * Autor: Arthur H de O Petroli
+ * Autor: Arthur H de O Petroli e Séfora Davanso
  * Ultima atualizacao: 16/04/2025
  * 
  * Referencias: 
