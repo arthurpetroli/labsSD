@@ -2,22 +2,27 @@ package lab5;
 
 /**
  * Nome: Principal2.java
- * Descricao: Consulta ao Web Services de CEP (ViaCEP)
+ * Descricao: Consulta ao Web Services SOAP dos Correios
  * Author: Arthur Petroli e Sefora Davanso
- * Ultima atualizacao: 15/06/2025
+ * Ultima atualizacao: 16/06/2025
+ * 
  */
 
 public class Principal2 {
     public static void main(String[] args) {
         System.out.println("Principal: envia mensagem para o servidor");
         
-        SoapClient sc = new SoapClient();
+        // URL do serviço SOAP dos Correios
+        String soapEndpointUrl = "https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente";
+        String soapAction = "http://cliente.bean.master.sigep.bsb.correios.com.br/AtendeCliente/consultaCEP";
         
-        // Requisicao1 - Consulta CEP da residência
-        System.out.println("\n---Requisicao de Consulta de CEP---");
-        // Substitua pelo seu CEP
+        SoapCliente sc = new SoapCliente();
+        
+        // Requisição de consulta de CEP
+        System.out.println("\n---Requisicao1---");
+  
         sc.setCEP("86812600");
-        sc.consultarCEP();
+        sc.callSoapWebService(soapEndpointUrl, soapAction);
       
         System.out.println("Fim!");
     }
